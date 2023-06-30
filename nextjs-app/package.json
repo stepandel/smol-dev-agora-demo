@@ -1,0 +1,24 @@
+{
+  "name": "nextjs-app",
+  "version": "1.0.0",
+  "description": "A modern web application using the Next.js framework",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": ["nextjs", "typescript"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.13",
+    "@types/react": "^17.0.19",
+    "typescript": "^4.4.2"
+  }
+}
