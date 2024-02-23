@@ -1,14 +1,14 @@
 {
-  "name": "nextjs-app",
+  "name": "nextjs-delegate-app",
   "version": "1.0.0",
-  "description": "A modern web application using the Next.js framework",
+  "description": "A modern web application using the Next.js framework to display delegates",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
-  "keywords": ["nextjs", "typescript"],
+  "keywords": ["nextjs", "typescript", "delegate"],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -17,8 +17,9 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/node": "^16.7.13",
-    "@types/react": "^17.0.19",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.3",
+    "ts-node": "^10.2.1",
+    "@types/react": "^17.0.20",
+    "@types/node": "^16.7.13"
   }
 }

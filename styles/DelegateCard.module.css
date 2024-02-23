@@ -1,0 +1,52 @@
+.delegateCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+}
+
+.delegateCard img {
+    width: 100%;
+    height: auto;
+}
+
+.delegateCard .delegateInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.delegateCard .delegateInfo .ensName {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.delegateCard .delegateInfo .delegateStatement {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.delegateCard .delegateInfo .votingPower {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.delegateCard .delegateButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
