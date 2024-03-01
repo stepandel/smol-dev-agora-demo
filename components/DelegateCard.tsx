@@ -1,5 +1,5 @@
 import React from 'react';
-import { Delegate } from '../interfaces/Delegate';
+import { Delegate } from '../types/Delegate';
 import styles from '../styles/DelegateCard.module.css';
 
 interface DelegateCardProps {
@@ -8,11 +8,11 @@ interface DelegateCardProps {
 
 const DelegateCard: React.FC<DelegateCardProps> = ({ delegate }) => {
   return (
-    <div className={styles.delegateCard} id="delegate-card">
-      <img src={delegate.image} alt={delegate.ensName || delegate.walletAddress} />
-      <h2>{delegate.ensName || delegate.walletAddress}</h2>
-      <p>{delegate.statement}</p>
-      <p>Voting Power: {delegate.votingPower}</p>
+    <div className={styles.delegateCard}>
+      <img src={`/images/${delegate.image}`} alt={delegate.name} className={styles.delegateImage} />
+      <h2 className={styles.delegateName}>{delegate.name || delegate.walletAddress}</h2>
+      <p className={styles.delegateStatement}>{delegate.statement}</p>
+      <p className={styles.delegateVotingPower}>Voting Power: {delegate.votingPower}</p>
       <button className={styles.delegateButton}>Delegate</button>
     </div>
   );

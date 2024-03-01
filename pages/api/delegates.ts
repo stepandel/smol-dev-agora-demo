@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { Delegate } from '../../interfaces/Delegate';
-import { fetchDelegates } from '../../utils/fetchDelegates';
+import { fetchDelegates } from '../../lib/fetchDelegates';
+import { Delegate } from '../../types/Delegate';
 
 export default async function handler(
   req: NextApiRequest,
@@ -9,7 +9,7 @@ export default async function handler(
   try {
     const delegates: Delegate[] = await fetchDelegates();
     res.status(200).json(delegates);
-  } catch (err) {
-    res.status(500).json({ statusCode: 500, message: err.message });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 }

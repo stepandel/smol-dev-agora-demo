@@ -1,29 +1,24 @@
-import { GetServerSideProps } from 'next'
-import { Delegate } from '../interfaces/Delegate'
-import DelegateCard from '../components/DelegateCard'
-import Pagination from '../components/Pagination'
-import fetchDelegates from '../utils/fetchDelegates'
+import { GetServerSideProps } from 'next';
+import { Delegate } from '../types/Delegate';
+import fetchDelegates from '../lib/fetchDelegates';
+import DelegateCard from '../components/DelegateCard';
+import styles from '../styles/DelegateCard.module.css';
 
-interface HomeProps {
-  delegates: Delegate[]
+interface HomePageProps {
+  delegates: Delegate[];
 }
 
-const Home: React.FC<HomeProps> = ({ delegates }) => {
+export default function HomePage({ delegates }: HomePageProps) {
   return (
-    <div className="container">
-      <div className="delegate-grid">
-        {delegates.map((delegate, index) => (
-          <DelegateCard key={index} delegate={delegate} />
-        ))}
-      </div>
-      <Pagination />
+    <div className={styles.delegateGrid}>
+      {delegates.map((delegate) => (
+        <DelegateCard key={delegate.id} delegate={delegate} />
+      ))}
     </div>
-  )
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const delegates = await fetchDelegates()
-  return { props: { delegates } }
-}
-
-export default Home
+  const delegates = await fetchDelegates();
+  return { props: { delegates } };
+};
