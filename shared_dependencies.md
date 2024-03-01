@@ -1,23 +1,17 @@
-Shared Dependencies:
+1. **Dependencies**: Both "pages/index.tsx" and "pages/api/delegates.ts" will depend on "lib/fetchDelegates.ts" for fetching the list of delegates from the remote database. 
 
-1. **Next.js**: Used in "pages/index.tsx", "pages/api/delegates.ts", "next.config.js" for server-side rendering and routing.
+2. **Exported Variables**: The "lib/fetchDelegates.ts" will export a function named "fetchDelegates" which will be used in "pages/index.tsx" and "pages/api/delegates.ts". 
 
-2. **TypeScript**: Used in all ".ts" and ".tsx" files for type checking and improved developer experience.
+3. **Data Schemas**: The "types/index.d.ts" file will define the data schema for a delegate, which will be used across multiple files including "pages/index.tsx", "pages/api/delegates.ts", and "components/DelegateCard.tsx".
 
-3. **Delegate Type**: Defined in "types/Delegate.ts" and used in "pages/index.tsx", "pages/api/delegates.ts", "components/DelegateCard.tsx", "lib/fetchDelegates.ts" to represent the data structure of a delegate.
+4. **DOM Element IDs**: The "pages/index.tsx" will contain DOM elements with ids such as "delegate-list", "pagination", and "delegate-card" which will be used in the JavaScript functions for manipulating these elements.
 
-4. **fetchDelegates Function**: Defined in "lib/fetchDelegates.ts" and used in "pages/index.tsx", "pages/api/delegates.ts" to pull a list of delegates from remote DB.
+5. **CSS Modules**: The "styles/globals.css", "styles/DelegateCard.module.css", and "styles/Pagination.module.css" will be shared across "pages/index.tsx" and "components/DelegateCard.tsx", "components/Pagination.tsx" respectively for styling.
 
-5. **DelegateCard Component**: Defined in "components/DelegateCard.tsx" and used in "pages/index.tsx" to display each delegate.
+6. **Components**: The "components/DelegateCard.tsx" and "components/Pagination.tsx" will be used in "pages/index.tsx" for displaying the delegate cards and pagination.
 
-6. **CSS Modules**: Defined in "styles/DelegateCard.module.css", "styles/globals.css" and used in "pages/index.tsx", "components/DelegateCard.tsx" for styling.
+7. **Configuration Files**: The "next.config.js", "package.json", and "tsconfig.json" will be shared across the entire application for configuration purposes.
 
-7. **DOM Elements**: The id names of DOM elements used in "pages/index.tsx", "components/DelegateCard.tsx" include "delegate-card", "delegate-image", "delegate-name", "delegate-statement", "delegate-voting-power", "delegate-button".
+8. **Public Assets**: The "public/images/default-delegate.png" will be used in "components/DelegateCard.tsx" for displaying the default delegate image.
 
-8. **Package Dependencies**: Defined in "package.json" and used across all files. These include Next.js, TypeScript, and possibly other packages for fetching data, pagination, etc.
-
-9. **TypeScript Configuration**: Defined in "tsconfig.json" and used across all TypeScript files for compiler options.
-
-10. **Public Images**: Stored in "public/images/" and used in "components/DelegateCard.tsx" to display delegate images.
-
-11. **Next.js Configuration**: Defined in "next.config.js" and used across all Next.js files for custom configuration.
+9. **Function Names**: Functions like "fetchDelegates" from "lib/fetchDelegates.ts", "DelegateCard" from "components/DelegateCard.tsx", and "Pagination" from "components/Pagination.tsx" will be used in "pages/index.tsx".

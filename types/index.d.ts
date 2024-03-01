@@ -1,10 +1,8 @@
-```typescript
 export interface Delegate {
   id: string;
   image: string;
-  name: string;
+  ensName: string;
   walletAddress: string;
   statement: string;
   votingPower: number;
 }
-```

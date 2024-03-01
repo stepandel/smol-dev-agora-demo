@@ -1,19 +1,23 @@
 import { GetServerSideProps } from 'next';
-import { Delegate } from '../types/Delegate';
-import fetchDelegates from '../lib/fetchDelegates';
+import { fetchDelegates } from '../lib/fetchDelegates';
+import { Delegate } from '../types/index';
 import DelegateCard from '../components/DelegateCard';
+import Pagination from '../components/Pagination';
 import styles from '../styles/DelegateCard.module.css';
 
-interface HomePageProps {
+interface HomeProps {
   delegates: Delegate[];
 }
 
-export default function HomePage({ delegates }: HomePageProps) {
+export default function Home({ delegates }: HomeProps) {
   return (
-    <div className={styles.delegateGrid}>
-      {delegates.map((delegate) => (
-        <DelegateCard key={delegate.id} delegate={delegate} />
-      ))}
+    <div className={styles.container}>
+      <div className={styles.delegateList}>
+        {delegates.map((delegate, index) => (
+          <DelegateCard key={index} delegate={delegate} />
+        ))}
+      </div>
+      <Pagination />
     </div>
   );
 }

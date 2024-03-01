@@ -1,12 +1,16 @@
-import axios from 'axios';
-import { Delegate } from '../types/Delegate';
+import fetch from 'node-fetch';
+import { Delegate } from '../types/index';
 
 export async function fetchDelegates(): Promise<Delegate[]> {
-  try {
-    const response = await axios.get('https://api.delegates.com/delegates');
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    return [];
-  }
+  const response = await fetch('https://remote-db-url.com/delegates');
+  const data = await response.json();
+
+  return data.map((delegate: any) => ({
+    id: delegate.id,
+    image: delegate.image || '/images/default-delegate.png',
+    ensName: delegate.ensName,
+    walletAddress: delegate.walletAddress,
+    statement: delegate.statement,
+    votingPower: delegate.votingPower,
+  }));
 }
